@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "fb0170a4-901d-4216-a43f-e3cde8efbcb8",
+		"name": "Employee Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"position\": 1,\n    \"salary\": 2,\n    \"person\": {\n        \"name\": \"Carlos\",\n        \"lastName\": \"Daniel\",\n        \"cityName\": \"\",\n        \"address\": \"\",\n        \"cellphone\": \"\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 5,\n    \"position\": 1,\n    \"salary\": 1800,\n    \"person\": {\n        \"name\": \"Carlos\",\n        \"lastName\": \"Daniel\",\n        \"cityName\": \"1234567890\",\n        \"address\": \"\",\n        \"cellphone\": \"\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employees By Criteria",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee?positionId=1&personName=Carlos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee"
+					],
+					"query": [
+						{
+							"key": "positionId",
+							"value": "1"
+						},
+						{
+							"key": "personName",
+							"value": "Carlos"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Positions With Ordered Salaries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/position",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"position"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
